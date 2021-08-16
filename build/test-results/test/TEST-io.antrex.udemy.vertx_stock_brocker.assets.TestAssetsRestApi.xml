@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.antrex.udemy.vertx_stock_brocker.assets.TestAssetsRestApi" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-14T16:05:01" hostname="antrexs-hp-probook" time="3.874">
+  <properties/>
+  <testcase name="return_all_assets(Vertx, VertxTestContext)" classname="io.antrex.udemy.vertx_stock_brocker.assets.TestAssetsRestApi" time="3.874"/>
+  <system-out><![CDATA[?[33m21:05:02.233?[0;39m ?[31mWARN?[0;39m ?[32m[Test worker]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.AbstractRestApiTest?[0;39m - Tests are using local database !!!
+?[33m21:05:02.828?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-1]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.config.ConfigLoader?[0;39m - Fetch configuration for ["SERVER_PORT","DB_HOST","DB_PORT","DB_DATABASE","DB_USER","DB_PASSWORD"]
+?[33m21:05:03.406?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-1]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.VersionInfoVerticle?[0;39m - Current Application Version is: 1.0
+?[33m21:05:03.407?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-0]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - Deployed VersionInfoVerticle with id 7f098135-c735-45db-81f7-9a713fb7a680
+?[33m21:05:03.407?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-0]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.config.ConfigLoader?[0;39m - Fetch configuration for ["SERVER_PORT","DB_HOST","DB_PORT","DB_DATABASE","DB_USER","DB_PASSWORD"]
+?[33m21:05:03.464?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-0]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - DB Config: DbConfig{host='localhost', port=5432, database='vertx-stock-broker', user='postgres', password=*****'}
+?[33m21:05:03.492?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - Migrating DB schema using jdbc url: jdbc:postgresql://localhost:5432/vertx-stock-broker
+?[33m21:05:04.195?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36morg.flywaydb.core.internal.license.VersionPrinter?[0;39m - Flyway Community Edition 7.13.0 by Redgate
+?[33m21:05:04.198?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36mo.f.core.internal.database.base.BaseDatabaseType?[0;39m - Database: jdbc:postgresql://localhost:5432/vertx-stock-broker (PostgreSQL 13.1)
+?[33m21:05:04.309?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - db schema is at version: 0.1
+?[33m21:05:04.325?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36morg.flywaydb.core.internal.license.VersionPrinter?[0;39m - Flyway Community Edition 7.13.0 by Redgate
+?[33m21:05:04.361?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - Pending migrations are: []
+?[33m21:05:04.375?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36morg.flywaydb.core.internal.license.VersionPrinter?[0;39m - Flyway Community Edition 7.13.0 by Redgate
+?[33m21:05:04.400?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36morg.flywaydb.core.internal.command.DbValidate?[0;39m - Successfully validated 2 migrations (execution time 00:00.010s)
+?[33m21:05:04.421?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36morg.flywaydb.core.internal.command.DbMigrate?[0;39m - Current version of schema "broker": 0.1
+?[33m21:05:04.422?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-worker-thread-2]?[0;39m ?[36morg.flywaydb.core.internal.command.DbMigrate?[0;39m - Schema "broker" is up to date. No migration necessary.
+?[33m21:05:04.427?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-0]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - Migrated db schema to latest version!
+?[33m21:05:04.431?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-2]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.config.ConfigLoader?[0;39m - Fetch configuration for ["SERVER_PORT","DB_HOST","DB_PORT","DB_DATABASE","DB_USER","DB_PASSWORD"]
+?[33m21:05:04.432?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-3]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.config.ConfigLoader?[0;39m - Fetch configuration for ["SERVER_PORT","DB_HOST","DB_PORT","DB_DATABASE","DB_USER","DB_PASSWORD"]
+?[33m21:05:04.445?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-4]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.config.ConfigLoader?[0;39m - Fetch configuration for ["SERVER_PORT","DB_HOST","DB_PORT","DB_DATABASE","DB_USER","DB_PASSWORD"]
+?[33m21:05:04.467?[0;39m ?[39mDEBUG?[0;39m ?[32m[vert.x-eventloop-thread-5]?[0;39m ?[36mi.a.udemy.vertx_stock_brocker.config.ConfigLoader?[0;39m - Fetch configuration for ["SERVER_PORT","DB_HOST","DB_PORT","DB_DATABASE","DB_USER","DB_PASSWORD"]
+?[33m21:05:04.476?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-2]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - Retrieved configuration: BrokerConfig(serverPort=9000, version=1.0, dbConfig=DbConfig{host='localhost', port=5432, database='vertx-stock-broker', user='postgres', password=*****'})
+?[33m21:05:04.489?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-3]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - Retrieved configuration: BrokerConfig(serverPort=9000, version=1.0, dbConfig=DbConfig{host='localhost', port=5432, database='vertx-stock-broker', user='postgres', password=*****'})
+?[33m21:05:04.505?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-4]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - Retrieved configuration: BrokerConfig(serverPort=9000, version=1.0, dbConfig=DbConfig{host='localhost', port=5432, database='vertx-stock-broker', user='postgres', password=*****'})
+?[33m21:05:04.509?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-5]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - Retrieved configuration: BrokerConfig(serverPort=9000, version=1.0, dbConfig=DbConfig{host='localhost', port=5432, database='vertx-stock-broker', user='postgres', password=*****'})
+?[33m21:05:04.762?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-2]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - HTTP server started on port 9000
+?[33m21:05:04.762?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-3]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - HTTP server started on port 9000
+?[33m21:05:04.763?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-4]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - HTTP server started on port 9000
+?[33m21:05:04.769?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-5]?[0;39m ?[36mi.antrex.udemy.vertx_stock_brocker.RestApiVerticle?[0;39m - HTTP server started on port 9000
+?[33m21:05:04.770?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-0]?[0;39m ?[36mio.antrex.udemy.vertx_stock_brocker.MainVerticle?[0;39m - Deployed RestApiVerticle with id 3f171fe1-00c1-4d1c-aaac-6f1b52b5c2a4
+?[33m21:05:05.344?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-5]?[0;39m ?[36mi.a.u.vertx_stock_brocker.assets.GetAssetsHandler?[0;39m - Request path: /assets
+?[33m21:05:05.417?[0;39m ?[34mINFO?[0;39m ?[32m[vert.x-eventloop-thread-6]?[0;39m ?[36mi.a.u.vertx_stock_brocker.assets.TestAssetsRestApi?[0;39m - Response: [{"name":"AAPL"},{"name":"AMZN"},{"name":"FB"},{"name":"GOOG"},{"name":"MSFT"},{"name":"NFLX"},{"name":"TSLA"}]
+]]></system-out>
+  <system-err><![CDATA[SLF4J: The requested version 1.8.99 by your slf4j binding is not compatible with [2.0]
+SLF4J: See http://www.slf4j.org/codes.html#version_mismatch for further details.
+]]></system-err>
+</testsuite>
