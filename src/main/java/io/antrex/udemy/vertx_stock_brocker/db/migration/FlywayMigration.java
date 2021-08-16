@@ -23,7 +23,7 @@ public class FlywayMigration {
         return vertx.<Void>executeBlocking(promise -> {
             execute(dbConfig);
             promise.complete();
-        }).onFailure(err -> LOG.error("Failed to migrate db scheam with error: ", err));
+        }).onFailure(err -> LOG.error("Failed to migrate db schema with error: ", err));
     }
 
     private static void execute(DbConfig dbConfig) {

@@ -3,6 +3,7 @@ package io.antrex.udemy.vertx_stock_brocker;
 import io.antrex.udemy.vertx_stock_brocker.assets.AssetsRestApi;
 import io.antrex.udemy.vertx_stock_brocker.config.BrokerConfig;
 import io.antrex.udemy.vertx_stock_brocker.config.ConfigLoader;
+import io.antrex.udemy.vertx_stock_brocker.db.DbPools;
 import io.antrex.udemy.vertx_stock_brocker.quotes.QuotesRestApi;
 import io.antrex.udemy.vertx_stock_brocker.watchlist.WatchListRestApi;
 import io.vertx.core.AbstractVerticle;
@@ -12,10 +13,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
-import io.vertx.pgclient.PgConnectOptions;
-import io.vertx.pgclient.PgPool;
 import io.vertx.sqlclient.Pool;
-import io.vertx.sqlclient.PoolOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +31,7 @@ public class RestApiVerticle extends AbstractVerticle {
     }
 
     private void startHttpServer(Promise<Void> startPromise, BrokerConfig config) {
-        final Pool db = createDbPool(config);
+        final Pool db = DbPools.createPgPool(config, vertx);
 
         Router restApi = Router.router(vertx);
         restApi.route()
@@ -55,19 +53,6 @@ public class RestApiVerticle extends AbstractVerticle {
                 }
             });
     }
-
-    private PgPool createDbPool(BrokerConfig config) {
-        final var connectOptions = new PgConnectOptions()
-            .setHost(config.getDbConfig().getHost())
-            .setPort(config.getDbConfig().getPort())
-            .setDatabase(config.getDbConfig().getDatabase())
-            .setUser(config.getDbConfig().getUser())
-            .setPassword(config.getDbConfig().getPassword());
-        final var poolOptions = new PoolOptions()
-            .setMaxSize(4);
-        return PgPool.pool(vertx, connectOptions, poolOptions);
-    }
-
 
     private Handler<RoutingContext> handlerFailure() {
         return err -> {
